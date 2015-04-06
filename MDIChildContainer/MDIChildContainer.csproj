@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6BDD9633-2D34-4BF4-983D-2C32B7E75FDD}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>MDIChildContainer</RootNamespace>
+    <AssemblyName>MDIChildContainer</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="gtk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
+      <Package>gtk-sharp-2.0</Package>
+    </Reference>
+    <Reference Include="gdk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
+      <Package>gtk-sharp-2.0</Package>
+    </Reference>
+    <Reference Include="glib-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
+      <Package>glib-sharp-2.0</Package>
+    </Reference>
+    <Reference Include="atk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
+      <Package>gtk-sharp-2.0</Package>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="MDIChildContainer.cs" />
+    <Compile Include="MDIChildWindow.cs" />
+    <Compile Include="MDIChildWindow.GUI.cs" />
+    <Compile Include="MDIChildContainer.GUI.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Folder Include="Icons\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Icons\close.png">
+      <LogicalName>Icons.close.png</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Icons\close2.png">
+      <LogicalName>Icons.close2.png</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Icons\maximize.png">
+      <LogicalName>Icons.maximize.png</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Icons\maximize2.png">
+      <LogicalName>Icons.maximize2.png</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Icons\restore.png">
+      <LogicalName>Icons.restore.png</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Icons\restore2.png">
+      <LogicalName>Icons.restore2.png</LogicalName>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>
