@@ -22,6 +22,46 @@
         <property name="ShortLabel" translatable="yes">New</property>
         <signal name="Activated" handler="OnNewActionActivated" />
       </action>
+      <action id="EditAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Edit</property>
+        <property name="ShortLabel" translatable="yes">Edit</property>
+      </action>
+      <action id="ExitAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Exit</property>
+        <property name="ShortLabel" translatable="yes">Exit</property>
+      </action>
+      <action id="AddWindowAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Add Window</property>
+        <property name="ShortLabel" translatable="yes">Add Window</property>
+      </action>
+      <action id="WindowsAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Windows</property>
+        <property name="ShortLabel" translatable="yes">Windows</property>
+      </action>
+      <action id="CascadeAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Cascade</property>
+        <property name="ShortLabel" translatable="yes">Cascade</property>
+      </action>
+      <action id="TileAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Tile</property>
+        <property name="ShortLabel" translatable="yes">Tile</property>
+      </action>
+      <action id="HorizontalAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Horizontal</property>
+        <property name="ShortLabel" translatable="yes">Horizontal</property>
+      </action>
+      <action id="VerticalAction">
+        <property name="Type">Action</property>
+        <property name="Label" translatable="yes">Vertical</property>
+        <property name="ShortLabel" translatable="yes">Vertical</property>
+      </action>
     </action-group>
     <property name="MemberName" />
     <property name="Title" translatable="yes">MainWindow</property>
@@ -36,6 +76,17 @@
             <node name="__gtksharp_139_Stetic_Editor_ActionMenuBar" type="Menubar">
               <node type="Menu" action="FileAction">
                 <node type="Menuitem" action="NewAction" />
+                <node type="Menuitem" action="ExitAction" />
+              </node>
+              <node type="Menu" action="EditAction">
+                <node type="Menuitem" action="AddWindowAction" />
+              </node>
+              <node type="Menu" action="WindowsAction">
+                <node type="Menuitem" action="CascadeAction" />
+                <node type="Menu" action="TileAction">
+                  <node type="Menuitem" action="HorizontalAction" />
+                  <node type="Menuitem" action="VerticalAction" />
+                </node>
               </node>
             </node>
           </widget>

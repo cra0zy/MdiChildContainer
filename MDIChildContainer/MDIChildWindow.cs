@@ -573,7 +573,7 @@ public partial class MDIChildWindow : VBox
 
 	protected void OnEventbox6ButtonPressEvent (object o, Gtk.ButtonPressEventArgs args)
 	{
-		container.RemoveWindow (this);
+        container.RemoveWindow (this.ContentWidget);
 	}
 }
 

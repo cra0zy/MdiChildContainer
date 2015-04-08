@@ -9,6 +9,22 @@ public partial class MainWindow
 	
 	private global::Gtk.Action NewAction;
 	
+	private global::Gtk.Action EditAction;
+	
+	private global::Gtk.Action ExitAction;
+	
+	private global::Gtk.Action AddWindowAction;
+	
+	private global::Gtk.Action WindowsAction;
+	
+	private global::Gtk.Action CascadeAction;
+	
+	private global::Gtk.Action TileAction;
+	
+	private global::Gtk.Action HorizontalAction;
+	
+	private global::Gtk.Action VerticalAction;
+	
 	private global::Gtk.VBox vbox1;
 	
 	private global::Gtk.MenuBar menubar1;
@@ -27,6 +43,30 @@ public partial class MainWindow
 		this.NewAction = new global::Gtk.Action ("NewAction", global::Mono.Unix.Catalog.GetString ("New"), null, null);
 		this.NewAction.ShortLabel = global::Mono.Unix.Catalog.GetString ("New");
 		w1.Add (this.NewAction, null);
+		this.EditAction = new global::Gtk.Action ("EditAction", global::Mono.Unix.Catalog.GetString ("Edit"), null, null);
+		this.EditAction.ShortLabel = global::Mono.Unix.Catalog.GetString ("Edit");
+		w1.Add (this.EditAction, null);
+		this.ExitAction = new global::Gtk.Action ("ExitAction", global::Mono.Unix.Catalog.GetString ("Exit"), null, null);
+		this.ExitAction.ShortLabel = global::Mono.Unix.Catalog.GetString ("Exit");
+		w1.Add (this.ExitAction, null);
+		this.AddWindowAction = new global::Gtk.Action ("AddWindowAction", global::Mono.Unix.Catalog.GetString ("Add Window"), null, null);
+		this.AddWindowAction.ShortLabel = global::Mono.Unix.Catalog.GetString ("Add Window");
+		w1.Add (this.AddWindowAction, null);
+		this.WindowsAction = new global::Gtk.Action ("WindowsAction", global::Mono.Unix.Catalog.GetString ("Windows"), null, null);
+		this.WindowsAction.ShortLabel = global::Mono.Unix.Catalog.GetString ("Windows");
+		w1.Add (this.WindowsAction, null);
+		this.CascadeAction = new global::Gtk.Action ("CascadeAction", global::Mono.Unix.Catalog.GetString ("Cascade"), null, null);
+		this.CascadeAction.ShortLabel = global::Mono.Unix.Catalog.GetString ("Cascade");
+		w1.Add (this.CascadeAction, null);
+		this.TileAction = new global::Gtk.Action ("TileAction", global::Mono.Unix.Catalog.GetString ("Tile"), null, null);
+		this.TileAction.ShortLabel = global::Mono.Unix.Catalog.GetString ("Tile");
+		w1.Add (this.TileAction, null);
+		this.HorizontalAction = new global::Gtk.Action ("HorizontalAction", global::Mono.Unix.Catalog.GetString ("Horizontal"), null, null);
+		this.HorizontalAction.ShortLabel = global::Mono.Unix.Catalog.GetString ("Horizontal");
+		w1.Add (this.HorizontalAction, null);
+		this.VerticalAction = new global::Gtk.Action ("VerticalAction", global::Mono.Unix.Catalog.GetString ("Vertical"), null, null);
+		this.VerticalAction.ShortLabel = global::Mono.Unix.Catalog.GetString ("Vertical");
+		w1.Add (this.VerticalAction, null);
 		this.UIManager.InsertActionGroup (w1, 0);
 		this.AddAccelGroup (this.UIManager.AccelGroup);
 		this.Name = "MainWindow";
@@ -36,7 +76,7 @@ public partial class MainWindow
 		this.vbox1 = new global::Gtk.VBox ();
 		this.vbox1.Name = "vbox1";
 		// Container child vbox1.Gtk.Box+BoxChild
-		this.UIManager.AddUiFromString ("<ui><menubar name='menubar1'><menu name='FileAction' action='FileAction'><menuitem name='NewAction' action='NewAction'/></menu></menubar></ui>");
+		this.UIManager.AddUiFromString ("<ui><menubar name='menubar1'><menu name='FileAction' action='FileAction'><menuitem name='NewAction' action='NewAction'/><menuitem name='ExitAction' action='ExitAction'/></menu><menu name='EditAction' action='EditAction'><menuitem name='AddWindowAction' action='AddWindowAction'/></menu><menu name='WindowsAction' action='WindowsAction'><menuitem name='CascadeAction' action='CascadeAction'/><menu name='TileAction' action='TileAction'><menuitem name='HorizontalAction' action='HorizontalAction'/><menuitem name='VerticalAction' action='VerticalAction'/></menu></menu></menubar></ui>");
 		this.menubar1 = ((global::Gtk.MenuBar)(this.UIManager.GetWidget ("/menubar1")));
 		this.menubar1.Name = "menubar1";
 		this.vbox1.Add (this.menubar1);

@@ -119,7 +119,7 @@ public partial class MDIChildContainer : VBox
     }
 
     bool max;
-	MDIChildWindow mwidget;
+    MDIChildWindow mwidget;
 
 	public MDIChildContainer ()
 	{
@@ -146,13 +146,39 @@ public partial class MDIChildContainer : VBox
         child.ResetCursor ();
     }
 
-    public void RemoveWindow (MDIChildWindow mwidget)
+    public void RemoveWindow (Widget widget)
     {
-        if (max)
+        MDIChildWindow mwidget = null;
+
+        if (this.mwidget != null && this.mwidget.ContentWidget == widget)
         {
-            eventbox1.Remove(mwidget.ContentWidget);
-            this.mwidget = null;
+            mwidget = this.mwidget;
+            UnMaximizeWindow();
         }
+        else
+        {
+            foreach (MDIChildWindow child in _children)
+                if (child.ContentWidget == widget)
+                    mwidget = child;
+        }
+
+        if (mwidget == null)
+            return;
+
+        fixed1.Remove (mwidget);
+        _children.Remove (mwidget);
+        this.ShowAll ();
+    }
+
+    public void RemoveWindow (int index)
+    {
+        if (_children.Count > index)
+            return;
+
+        MDIChildWindow mwidget = _children[index];
+
+        if (this.mwidget != null && _children[index] == this.mwidget)
+            UnMaximizeWindow();
 
         fixed1.Remove (mwidget);
         _children.Remove (mwidget);
